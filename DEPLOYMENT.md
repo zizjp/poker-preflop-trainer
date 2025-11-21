@@ -57,7 +57,7 @@ git push
 
 5. デプロイ完了後、以下のURLでアクセス可能：
    ```
-   https://your-username.github.io/poker-preflop-trainer/
+   https://zizjp.github.io/poker-preflop-trainer/
    ```
 
 #### 方法B: 手動ビルド＆デプロイ
@@ -74,7 +74,7 @@ git init
 git add .
 git commit -m "Deploy to GitHub Pages"
 git branch -M gh-pages
-git remote add origin https://github.com/your-username/poker-preflop-trainer.git
+git remote add origin https://github.com/zizjp/poker-preflop-trainer.git
 git push -f origin gh-pages
 
 # 4. GitHub Settings → Pages で Source を "gh-pages" ブランチに設定

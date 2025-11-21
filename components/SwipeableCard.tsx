@@ -90,9 +90,6 @@ export default function SwipeableCard({
             {/* ハンド名 */}
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-2">{handString}</div>
-              <p className="text-gray-400 text-sm">
-                左にスワイプ: Fold | 右にスワイプ: Raise
-              </p>
             </div>
 
             {/* スワイプインジケーター */}

@@ -67,7 +67,7 @@ git push
 ### ステップ1: Safariでアクセス
 
 ```
-https://your-username.github.io/poker-preflop-trainer/
+https://zizjp.github.io/poker-preflop-trainer/
 ```
 
 ### ステップ2: ホーム画面に追加

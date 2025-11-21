@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/poker-preflop-trainer',
+  // ローカル開発: basePath なし
+  // 本番ビルド: basePath あり
+  basePath: process.env.NODE_ENV === 'production' ? '/poker-preflop-trainer' : '',
   images: {
     unoptimized: true,
   },

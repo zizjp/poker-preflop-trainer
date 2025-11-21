@@ -9,7 +9,7 @@
 
 ## 🌟 デモ
 
-**Live Demo**: `https://your-username.github.io/poker-preflop-trainer/`
+**Live Demo**: `https://zizjp.github.io/poker-preflop-trainer/`
 
 > GitHub Pagesでホスティング中
 
