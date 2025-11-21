@@ -33,6 +33,23 @@ function GameContent() {
     setQuestionStartTime(Date.now());
   }, []);
 
+  // ゲーム中はスクロールを無効化
+  useEffect(() => {
+    // bodyのスクロールを無効化
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    
+    // クリーンアップ: コンポーネントが破棄されたらスクロールを復元
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
+
   const currentHand = hands[currentIndex];
   const correctAction: Action = currentHand && isInRange(currentHand, position) ? 'raise' : 'fold';
 

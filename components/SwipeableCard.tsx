@@ -45,10 +45,10 @@ export default function SwipeableCard({
   };
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="relative w-full h-full flex items-center justify-center touch-pan-x">
       <motion.div
-        className="absolute"
-        style={{ x, rotate, opacity }}
+        className="absolute touch-none"
+        style={{ x, rotate, opacity, touchAction: 'pan-x' }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onDragEnd={handleDragEnd}
@@ -90,6 +90,9 @@ export default function SwipeableCard({
             {/* ハンド名 */}
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-2">{handString}</div>
+              <p className="text-gray-400 text-sm">
+                左にスワイプ: Fold | 右にスワイプ: Raise
+              </p>
             </div>
 
             {/* スワイプインジケーター */}
