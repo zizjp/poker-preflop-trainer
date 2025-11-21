@@ -1,0 +1,42 @@
+
+    <svg width="192" height="192" xmlns="http://www.w3.org/2000/svg">
+      <!-- 背景 -->
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0D5C3D;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#1a7f5a;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="192" height="192" fill="url(#grad)" rx="19.200000000000003"/>
+      
+      <!-- カードシンボル -->
+      <g transform="translate(96, 96)">
+        <!-- スペード -->
+        <text 
+          x="0" 
+          y="28.799999999999997" 
+          font-size="96" 
+          text-anchor="middle" 
+          fill="white"
+          font-family="Arial, sans-serif"
+        >♠</text>
+        
+        <!-- テキスト -->
+        <text 
+          x="0" 
+          y="96" 
+          font-size="23.04" 
+          text-anchor="middle" 
+          fill="white"
+          font-family="Arial, sans-serif"
+          font-weight="bold"
+        >POKER</text>
+      </g>
+      
+      <!-- 角の装飾 -->
+      <circle cx="28.799999999999997" cy="28.799999999999997" r="9.600000000000001" fill="white" opacity="0.3"/>
+      <circle cx="163.2" cy="28.799999999999997" r="9.600000000000001" fill="white" opacity="0.3"/>
+      <circle cx="28.799999999999997" cy="163.2" r="9.600000000000001" fill="white" opacity="0.3"/>
+      <circle cx="163.2" cy="163.2" r="9.600000000000001" fill="white" opacity="0.3"/>
+    </svg>
+  
