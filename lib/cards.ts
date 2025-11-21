@@ -90,7 +90,7 @@ export function generateCardDisplay(handString: string): {
   }
   
   const getColor = (suit: Suit) => {
-    return suit === 'h' || suit === 'd' ? 'text-red-600' : 'text-black';
+    return suit === 'h' || suit === 'd' ? 'text-red-600' : 'text-gray-900';
   };
   
   return {

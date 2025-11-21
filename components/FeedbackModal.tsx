@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Action } from '@/lib/types';
+import { useEffect } from 'react';  // ← 追加: useEffectをインポート
 
 interface FeedbackModalProps {
   show: boolean;
@@ -22,6 +23,16 @@ export default function FeedbackModal({
   explanation,
   onNext,
 }: FeedbackModalProps) {
+  // ← 新規追加: 1.5秒後に自動的に次の問題へ進む
+  useEffect(() => {
+    if (show) {
+      const timer = setTimeout(() => {
+        onNext();
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [show, onNext]);
+
   return (
     <AnimatePresence>
       {show && (
@@ -86,16 +97,28 @@ export default function FeedbackModal({
               </p>
             </div>
 
-            {/* 次へボタン */}
-            <button
-              onClick={onNext}
-              className="w-full bg-white text-gray-900 font-bold py-4 rounded-xl hover:bg-opacity-90 transition-all transform hover:scale-105 active:scale-95"
-            >
-              次の問題へ →
-            </button>
+            {/* ← 変更: ボタンからテキスト表示に変更 */}
+            <div className="text-center text-white text-sm opacity-70">
+              <p>1.5秒後に自動的に次の問題へ</p>
+              <p className="mt-1">タップでスキップ →</p>
+            </div>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 }
+🔍 主な変更点（3箇所）
+1. useEffect のインポート（5行目）
+Copy// 追加
+import { useEffect } from 'react';
+2. 自動遷移ロジック（26-34行目）
+Copy// 新規追加
+useEffect(() => {
+  if (show) {
+    const timer = setTimeout(() => {
+      onNext();
+    }, 1500);  // 1.5秒後に実行
+    return () => clearTimeout(timer);  // クリーンアップ
+  }
+}, [show, onNext]);

@@ -24,8 +24,8 @@ export default function Card({ rank, suit, color }: CardProps) {
       </div>
       
       {/* 中央の大きなスート */}
-      <div className={`text-6xl ${color}`}>
-        {suit}
+      <div className="text-5xl flex items-center justify-center flex-1">
+      {suit}
       </div>
       
       {/* 下部のランクとスート（反転） */}
