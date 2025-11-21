@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 
 interface SwipeableCardProps {
@@ -29,6 +29,12 @@ export default function SwipeableCard({
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-25, 25]);
   const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0, 1, 1, 1, 0]);
+
+  // カードが変わったら状態をリセット
+  useEffect(() => {
+    setExitX(0);
+    x.set(0);
+  }, [handString, x]);
 
   const handleDragEnd = (_: any, info: any) => {
     if (Math.abs(info.offset.x) > 100) {

@@ -145,6 +145,7 @@ function GameContent() {
       {/* メインコンテンツ */}
       <div className="flex-1 flex items-center justify-center p-4 min-h-[calc(100vh-120px)]">
         <SwipeableCard
+          key={currentIndex}
           card1={cards.card1}
           card2={cards.card2}
           handString={currentHand}
