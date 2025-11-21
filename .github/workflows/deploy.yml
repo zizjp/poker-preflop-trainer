@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master  # masterブランチも追加
 
 permissions:
   contents: read
