@@ -108,17 +108,3 @@ export default function FeedbackModal({
     </AnimatePresence>
   );
 }
-🔍 主な変更点（3箇所）
-1. useEffect のインポート（5行目）
-Copy// 追加
-import { useEffect } from 'react';
-2. 自動遷移ロジック（26-34行目）
-Copy// 新規追加
-useEffect(() => {
-  if (show) {
-    const timer = setTimeout(() => {
-      onNext();
-    }, 1500);  // 1.5秒後に実行
-    return () => clearTimeout(timer);  // クリーンアップ
-  }
-}, [show, onNext]);
